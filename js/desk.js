@@ -35,8 +35,19 @@ function finishedPreloading(hash){
 
 
 $(document).ready(function() {  
+  if (!cookie)
+  {
+    QueryLoader.init();
+  } else {
+    finishedPreloading();
+  }
   
-  (!cookie) ? QueryLoader.init() : finishedPreloading();
+  CFInstall.check({
+	  preventPrompt: true,
+	  onmissing: function(){
+	    document.location = "get_chrome.html"
+	  }
+  });
   
   $('.deskObject').hoverIntent(
     function() {
