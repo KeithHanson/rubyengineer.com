@@ -1,0 +1,132 @@
+    <div class="journalOpen">
+    
+      <!-- 
+        PAGES & EXPLANATION!
+        **************************************************
+        
+        Each page is aproximately 480px tall. I have no idea what that equates out to in text cut off, but if you get past that
+        we get scroll bars. Thats the suck. So each post will have page 1 / 2 / 3 / etc. You'll have two classes. Left page, right page. 
+        I've built the JS to ajax out to the posts folder (you fill in the variable) and grab the next set of pages. 
+        It just walks the DOM and grabs the element on the back of the request. The markup is identical to the visible markup, this is just
+        the poor mans JSON. 
+        
+        You'll just have to play with the content to see how its coming out and where to split the pages. =\
+        
+        The left / right classing handles positioning.
+        
+        You've also got markup you can put in the blogs. H1 - H6, IMG (Wide, Left, and Right), UL, OL, and Code hilighting with BeautyOfCode.
+        
+        BOC here: http://startbigthinksmall.wordpress.com/2008/10/30/beautyofcode-jquery-plugin-for-syntax-highlighting/
+      -->
+      
+      <div class="page1 left page">
+        
+        <h2 class="title"><a href="blog/2009-10-06-the-blog-post-title-goes-here-and-this-is-two.html">The Blog Post Title Goes Here and This Is Two!</a></h2>
+        
+        <p class="postInfo"><em class="month">10</em>.<em class="day">02</em>.<em class="year">09</em> | <a href="#">80 comments</a> | 12:41am</p>
+        
+        <div class="image wide">
+          <img src="images/samples/wide.png" alt=""/>
+          <span></span>
+        </div><!-- END image -->
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin dictum fermentum mollis. Quisque eget enim a libero.</p>
+        <p>Pellentesque varius at ut nisi. Mauris erat tortor, venenatis quis viverra id, mattis ac augue. Morbi diam leo, volutpat et rhoncus eget, ultricies in mauris. Sed lectus purus, fermentum sed</p>
+                
+      </div><!-- END page1 -->
+      
+      <div class="page2 right page">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin dictum fermentum mollis. Quisque eget enim a libero pellentesque varius at ut nisi. Mauris erat tortor, venenatis quis viverra id, mattis ac augue. </p>
+        <p>Morbi diam leo, volutpat et rhoncus eget, ultricies in mauris. Sed lectus purus, fermentum sed elementum id, convallis ac justo. Quisque nisi mauris, vulputate ultrices tempus nec, vehicula nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis feugiat, tellus et elementum tincidunt, orci orci placerat augue, eget ultrices lectus ipsum ut ligula.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, </p>
+        <p>per inceptos himenaeos. Proin dictum fermen</p>
+        
+        <a href="#" id="page3" class="pageLink nextPageLink">page three ></a>
+        
+      </div><!-- END page2 -->
+      
+      <div class="page3 left page">
+        
+        <!-- IMPORTANT: Wrap your P / IMG divs in a floatRight / floatLeft class!!! -->
+        <div class="floatRight">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit </p>
+          
+          <div class="image right">
+            <img src="images/samples/right.png" alt=""/>
+            <span></span>
+          </div><!-- END image -->
+        </div><!-- END floatLeft -->
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hime</p>
+        
+        <div class="syntaxHighliterWrap">
+          <pre class="brush: js;">
+            /* My Code */
+          </pre>
+        </div><!-- END syntaxHighliteWrapper -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac </p>
+        
+        <a href="#" id="page2" class="pageLink prevPageLink">< page two</a>
+      </div><!-- END page3 -->
+      
+      <div class="page4 right page">
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin dictum fermentum mollis. Quisque eget enim a libero pellentesque varius at ut nisi. Mauris erat tortor, venenatis quis viverra id, mattis ac augue.</p>
+        <p>Morbi diam leo, volutpat et rhoncus eget, ultricies in mauris. Sed lectus purus, fermentum sed elementum id, convallis ac justo. Quisque nisi mauris, vulputate ultrices tempus nec, vehicula nec arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis feugiat, tellus et elementum tincidunt, orci orci placerat augue, eget ultrices lectus ipsum ut ligula.</p>
+        
+        <div class="floatLeft">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit </p>
+          <div class="image left">
+            <img src="images/samples/left.png" alt=""/>
+            <span></span>
+          </div><!-- END image -->
+        </div>  
+        
+        <a href="#" id="page5" class="pageLink nextPageLink">page five ></a>
+      </div><!-- END page4 -->
+      
+      <div class="page5 left page">
+              
+        <div class="image wide">
+          <img src="images/samples/wide.png" alt=""/>
+          <span></span>
+        </div><!-- END image -->
+        
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In massa mauris, facilisis eleifend iaculis sit amet, varius blandit enim. Donec nulla mi, varius at faucibus elementum, ornare ac nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin dictum fermentum mollis. Quisque eget enim a libero.</p>
+        <p>Pellentesque varius at ut nisi. Mauris erat tortor, venenatis quis viverra id, mattis ac augue. Morbi diam leo, volutpat et rhoncus eget, ultricies in mauris. Sed lectus purus, fermentum sed</p>
+        
+        <a href="#" id="page4" class="pageLink prevPageLink"> < page four </a>
+      </div><!-- END page5 -->
+      
+      <div class="page6 right page">
+        
+        <ul>
+          <li>Bullet</li>
+          <li>
+            Bullet
+            <ul>
+              <li>Bullet</li>
+            </ul>
+          </li>
+        </ul>
+        <!-- ^.. and so on and so forth -->
+        
+        <!-- Rock the EM's for numbers in OL's, just because these are sexy numbers and CSS's aren't -->
+        <ol>
+          <li><em>1.</em> OL Bullet</li>
+          <li><em>2.</em> OL Bullet</li>
+        </ol>
+        
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        
+        <!-- NOTE: Not necessary but a nice touch -->
+        <span class="fin pageLink"> fin </span>
+      </div><!-- END page6 -->
+      
+    </div><!-- END journalOpen -->

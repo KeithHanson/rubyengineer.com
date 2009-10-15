@@ -1,0 +1,225 @@
+/**********************************************************************************
+*	Basic Stylesheet ( For Mac: Firefox, Safari PC: Firefox, Opera, Netscape, IE6/7, Safari Beta ) 
+*
+*	version:	1.1
+*	author:		ken hanson
+*	email:		ken@markupninjas.com
+*	website:	www.markupninjas.com
+**********************************************************************************/
+
+/***********************************************************************
+*							Table of =Contents
+* ----------------------------------------------------------------------
+* =Normalization (CSS Reset)..................................(Line  16)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+* =SAMPLE SAMPLE..............................................(Line  ##)
+*************************************************************************/
+
+/*	When Searching for items in the table of contents, use = where they show up in the text above to find items more quickly  */
+
+/* KEITH HACKS */
+.QOverlay {
+	background-color: #000000;
+	z-index: 9998;
+}
+
+.QLoader {
+	background-color: #CCCCCC;
+	height: 1px;
+}
+
+/***********************************
+		=Normalization
+***********************************/
+
+/* Normalizes Margin, padding */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, p, blockquote, th, td { margin: 0; padding: 0;}
+
+/* Normalizes font-size for headers */
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+
+/* Removes list-style from lists */
+ol, ul { list-style: none; }
+
+/* Normalizes font-style and font-weight to normal */
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+
+/* Removes border styles from tables */
+table { border-spacing: 0; border-collapse: collapse;}
+
+/* Removes border from fieldset and img */
+fieldset, img { border: 0; }
+
+/* Left aligns text in caption and th */
+caption, th { text-align: left; }
+
+/* Removes quotation marks from q */
+q:before, q:after { content: ''; }
+
+/* Normalize Links for Netscape when image replacements are used (text decorates the whole page width up to the IR'd link with an underline) */
+a { text-decoration: none; color: white; outline:0}
+	a:hover { text-decoration: underline; }
+	
+.ir { position: relative; overflow: hidden; display: block;}
+	.ir em { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; display: block; background-repeat: no-repeat;}
+	
+	a em { cursor: pointer; }
+
+.hide { display: none; }
+
+/***********************************
+		=Base Objects
+***********************************/
+body { background: #0c0c0c url(images/bg.png) top center; overflow: hidden;}
+.wrapper { height: 600px;width: 970px; margin: 0 auto; position: relative; }
+	/*.lighting { position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; background: url(images/light.png) no-repeat center top; z-index: 6;}*/
+	.lamp { width: 624px; height: 250px; background: url(images/lamp.png) no-repeat top left; position: absolute; top: -10px; left: 50%; margin-left: -312px; z-index: 6}
+	.mbp { width: 768px; height: 678px; background: url(images/mbp.png); position: absolute; top: -250px; left: -270px; z-index: 5;}
+		.mbp .blur { background: url(images/blur_mbp.png);}
+	.journal { 
+		width: 377px; 
+		height: 336px; 
+		background: url(images/moleskin.png); 
+		position: absolute; 
+		top: 320px; 
+		left: -100px; 
+		z-index: 4;
+	}
+		.journal .blur { background: url(images/blur_moleskin.png); }
+	.bizCard { width: 297px; height: 234px; background: url(images/bizcard.png); position: absolute; top: 50%; left: 50%; margin: 0 0 0 -150px; z-index: 6; }
+		.bizCard .blur { background: url(images/blur_bizcard.png); }
+	.coffee { width: 289px; height: 324px; background: url(images/coffee.png); position: absolute; top: -50px; right: -120px; z-index: 3;}
+	.folio { width: 282px; height: 399px; background: url(images/iphone.png); position: absolute; bottom: -70px; right: -50px; z-index: 2;}
+		.folio .blur { background: url(images/iphone_blur.png); }
+
+	.objectAnchor { text-indent: -9999px; display: block; height: 100%; width: 100%; }
+
+.blur { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: none;}
+	
+.openedItem { z-index: 7; }
+.bizCardOpen{ position: absolute; top: 50%; left: 50%; margin: 0 0 0 -200px; display: none;}
+
+.overlayLayer { background: #000; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 9997; opacity: .5; display: block;}
+.MBPLeft { border: 1px solid pink; background: #000; position: absolute; top: 0px; left: -75px; z-index: 9999; width: 200px; height: 100%; opacity: 0; display: block;}
+.MBPRight {border: 1px solid pink;  background: #000; position: absolute; top: 0px; right: -75px; z-index: 9999; width: 200px;  height: 100%; opacity: 0; display: block;}
+.openObject { display: none; }
+
+/***********************************
+		=Journal Objects
+***********************************/
+.journalOpen { width: 647px; height: 515px; position: absolute; z-index: 9998; left: 50%; margin: 0 0 0 -361px; background: url(images/blog.png) no-repeat top center; padding: 24px 39px 25px 36px; }
+	.journalOpen .page { display: none; color: #212121; font-size: 14px; font-family: Arial, "Helvetica Neue", Helvetica, Geneva, sans-serif; width: 307px; height: 515px; position: relative;}
+		.page a, span.pageLink { font-weight: bold; color: #000; font-style: italic; text-decoration: underline;}
+		
+		.page h1, .page h2, .page h3, .page h4, .page h5, .page h6 { line-height: 30px; font-family: Georgia, "Times New Roman", Times, serif; letter-spacing: -2px; font-style: normal; margin: 0 0 12px 0; }
+		
+		.page h1 { font-size: 34px; line-height: 36px;}
+		.page h2 { font-size: 30px; line-height: 30px;}
+		.page h3 { font-size: 25px; line-height: 25px;}
+		.page h4 { font-size: 22px; line-height: 22px; font-weight: normal;}
+		.page h5 { font-size: 19px; line-height: 19px; font-weight: normal;}
+		.page h6 { font-size: 18px; line-height: 18px; font-weight: normal;}
+			.page h1 a, .page h2 a, .page h3 a, .page h4 a, .page h5 a, .page h6 a { font-style: normal; font-weight: normal; }		
+		
+		.page h2.title { padding: 0 0 13px; border-bottom: solid 1px #212121; }
+			
+		.page p { margin: 0 0 15px 0; }
+		.page p.postInfo { text-align: center; margin-bottom: 10px;}
+
+		.page ul { padding-left: 20px; list-style: disc; list-style-position: inside; margin: 0 0 15px 0;}
+		.page ol { padding-left: 20px; margin: 0 0 15px 20px;}
+			.page ol li { position: relative; }
+				.page ol li em { font-family: Georgia, "Times New Roman", Times, serif; position: absolute; left: -20px;}
+			
+		.page .image { background: url(images/bg_imgLeft.png) no-repeat top left; position: relative; margin: 0 0 20px 0; left: -4px;}
+			.page .image img { display: block; background: url(images/bg_imgRight.png) no-repeat top right; margin: 0 0 0 8px; padding: 0 9px 0 0; display: block; border-top: solid 5px #fff;}
+			.page .image span { height: 20px; width: 100%; display: block; position: absolute; bottom: -20px; left: 0px; }
+
+		.page .image.wide span { background: url(images/bg_wideBottom.png); }
+
+		.floatRight { overflow: hidden; zoom: 1; }	
+			.floatRight * { width: 112px; float: left;}
+				.floatRight * * { width: auto; float: none; }
+			.page .floatRight .image { float: none; margin-left: 129px;}
+			.page .image.left span { background: url(images/bg_leftBottom.png) no-repeat top left; }
+		
+		.floatLeft { overflow: hidden; zoom: 1; }
+			.floatLeft * { width: 112px; float: right; }
+				.floatLeft * * { width: auto; float: none; }
+			.page .floatLeft .image { float: none; margin-right: 129px; }
+			.page .image.right span { background: url(images/bg_rightBottom.png) no-repeat top left; }
+
+			.page .image.right span, .page .image.left span { width: 177px; }
+		
+		.pageLink { display: block; width: 100%; position: absolute; bottom: 0px; left: 0px; }
+		.left .pageLink { text-align: left; }
+		.right .pageLink { text-align: right; }
+		
+		.syntaxHighliterWrap { width: 300px; height: 56px; position: relative; margin-bottom: 15px;}
+		
+	.journalOpen .page.left { float: left; }
+	.journalOpen .page.right { float: right; }
+
+	.journalOpen .page1, .journalOpen .page2 { display: block; }
+	
+	.journalOpen .loading { width: 179px; height: 174px; position: absolute; background: url(images/bg_spin.png); z-index: 9999; left: 50%; top: 150px; margin-left: -90px;}
+		.journalOpen .loading img { position: absolute; top: 50%; left: 50%; margin: -25px 0 0 -25px; }
+
+	
+/***********************************
+		=Archives
+***********************************/	
+.archivesOuter { width: 169px; height: 220px; overflow: hidden; position: absolute; left: -155px; top: 50px;}
+	.archivesInner { width: 100%; height: 100%; background: url(images/archives.png); position: absolute;}
+		.archives { padding: 20px 20px 20px 60px; font-size: 13px; }
+			.archivesList { height: 170px; overflow: hidden; margin-bottom: 10px;}
+			.archive { position: relative; top: 0px; }
+				.archives h3 { font-size: 16px; margin: 0 0 10px 0; }
+				.postsList { padding: 0 0 15px 0; }
+					.postsList li {display:block;padding-bottom:8px;}
+						.postsList li a { display: block; color: black; font-family: Helvetica, "Helvetica Neue", Arial, Geneva, sans-serif; }
+	
+			.archiveNav { display: none; position: absolute; left: 25px; width: 25px; height: 25px; }
+				.archivesUp { background: url(images/icon_up.png) no-repeat center center; top: 12px;}
+				.archivesDown { background: url(images/icon_down.png) no-repeat center center; bottom: 12px;}
+
+/***********************************
+		=Biz Card
+***********************************/
+.bizCardOpen { display: none; z-index: 9999; width: 699px; height: 400px; background: url(images/bizCard_open.png); text-align: center; position: absolute; top: 120px; left: 50%; margin-left: -350px; overflow: hidden;}
+	.flashWrap { margin-top: 23px; }
+	.pre_flash { width: 640px; height: 352px; background: url(images/pre_flash.png) no-repeat top left; position: absolute; display: none;}
+	.flashWrap .objectWrap { position: relative; left: 30px; width: 640px; height: 352px;}
+
+/***********************************
+		=iPhone Card
+***********************************/
+.folioOpen { z-index: 9999; position: absolute; width: 765px; height: 489px; background: url(images/iphone_open.png); top: 50px; left: 50%; margin: 0 0 0 -383px;}
+	.flashWrapper { position: absolute; width: 480px; height: 290px; left: 50%; margin: 0 0 0 -242px; top: 33px; background: #000; padding: 27px 0 0 0;}
+	
+.preloader { position: absolute; left: 50%; top: 400px; width: 200px; height: 200px; z-index: 9999; background-color: lime;}
+
+/***********************************
+		=MBP Open
+***********************************/
+.mbpOpen { width: 1149px; height: 675px; position: absolute; left: 50%; top: 20px; margin: 0 0 0 -575px; background: url(images/mbp_open.png); z-index: 9999; overflow: hidden;}
+	.mbpFlash { width: 858px; height: 511px; background: black; padding: 31px 0 0 0; position: absolute; top: -545px; left: 145px; text-align: center; overflow: hidden;}
+		.mbpFlash object { position: relative; left: -1px; display: none;}
+
+
+/***********************************
+		=Headings
+***********************************/
+h2.heading { position: absolute; display: none; text-indent: -9999px; background-position: top left; background-repeat: no-repeat;}
+	h2.portfolio { width: 160px; height: 90px; background-image: url(images/head_portfolio.png); bottom: 115px; left: 580px; z-index: 9990;}
+	h2.journalHead { width: 109px; height: 131px; background-image: url(images/head_journal.png); bottom: 30px; left: 290px; }
+	h2.meet { width: 140px; height: 43px; background-image: url(images/head_meet.png); bottom: 0px; left: 20px; }
+	h2.contact { width: 136px; height: 63px; background-image: url(images/head_contact.png); bottom: -40px; left: 0px; }
+
+h1 { width: 268px; height: 33px; background: url(images/logo.png); position: absolute; bottom: -50px; left: 50%; display: block; margin: 0 0 0 -134px; text-indent: -9999px;}

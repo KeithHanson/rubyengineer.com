@@ -1,0 +1,63 @@
+---
+layout: default
+title: "- Keith Hanson"
+---
+
+<div class="journalOpen openObject sprite">
+  <div class="loading" style="display: none;"><img src="images/ajax-loader.gif" alt="" /></div>
+  
+  <div class="archivesOuter">
+    <div class="archivesInner sprite">
+      <div class="archives">
+        <ol class="archivesList">
+          {% for post in site.posts %}
+            <li class="archive">
+              <h3><a href="{{post.url}}" style="color:black;">{{post.title}}</a></h3>
+            </li>
+          {% endfor %}
+        </ol>
+        
+        <a href="#" class="archivesUp archiveNav sprite"></a>
+        <a href="#" class="archivesDown archiveNav sprite"></a>
+      </div><!-- END archives -->
+    </div><!-- END archivesInner -->        
+  </div><!-- END archivesOuter -->
+  
+  <div class="content">
+    <!-- 
+      PAGES & EXPLANATION!
+      **************************************************
+      
+      Each page is aproximately 480px tall. I have no idea what that equates out to in text cut off, but if you get past that
+      we get scroll bars. Thats the suck. So each post will have page 1 / 2 / 3 / etc. You'll have two classes. Left page, right page. 
+      I've built the JS to ajax out to the posts folder (you fill in the variable) and grab the next set of pages. 
+      It just walks the DOM and grabs the element on the back of the request. The markup is identical to the visible markup, this is just
+      the poor mans JSON. 
+      
+      You'll just have to play with the content to see how its coming out and where to split the pages. =\
+      
+      The left / right classing handles positioning.
+      
+      You've also got markup you can put in the blogs. H1 - H6, IMG (Wide, Left, and Right), UL, OL, and Code hilighting with BeautyOfCode.
+      
+      BOC here: http://startbigthinksmall.wordpress.com/2008/10/30/beautyofcode-jquery-plugin-for-syntax-highlighting/
+    -->
+    <div class='page1 left page'>
+      <h2 style="text-align: center;">Welcome to RubyEngineer.com</h2>
+      <h4>
+        This contains all my candid thoughts on software development and various other topics
+        pertaining to the realm of delivering quality software. You may or may not agree with them, but they are mine
+        and what I have found to generally be true over the years of my development life. 
+      </h4>
+      <p>
+        Often, I will try to keep my customers in mind when speaking about new technologies and development "practices", 
+        but every now and then I'll let the inner geek loose and speak about developer specific ideas. Ultimately, though,
+        my goal is to help the non-developer understand topics that will help them make more informed decisions 
+        about their choices of technologies, practices, and platforms.
+      </p>
+      <p>
+        So, without further ado... click on the Archives sticky to the left to get started!
+      </p>
+    </div>
+  </div><!-- END content -->
+</div><!-- END journalOpen -->
