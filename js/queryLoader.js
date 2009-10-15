@@ -21,13 +21,15 @@ var QueryLoader = {
 	ieTimeout: "",
 		
 	init: function() {
+	  $(".preLoad").show();
+	  
 		if (navigator.userAgent.match(/MSIE (\d+(?:\.\d+)+(?:b\d*)?)/) == "MSIE 6.0,6.0") {
 			//break if IE6			
 			return false;
 		}
 		if (QueryLoader.selectorPreload == "body") {
 			QueryLoader.spawnLoader();
-			QueryLoader.getImages(QueryLoader.selectorPreload);
+      QueryLoader.getImages(QueryLoader.selectorPreload);
 			QueryLoader.createPreloading();
 		} else {
 			$(document).ready(function() {
